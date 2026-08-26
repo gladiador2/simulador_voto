@@ -1,0 +1,12 @@
+# Archivos basura del sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+
+# Logs y cachés de mirror (por si se vuelve a usar HTTrack en el futuro)
+hts-cache/
+hts-log.txt

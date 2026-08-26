@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Simuladores de votación</title>
+    <link rel="icon" href="simulador_cabrera/img/favicon.ico" />
+    <style>
+        :root {
+            color-scheme: light;
+            --bg: #f4f5f7;
+            --card-bg: #ffffff;
+            --border: #e0e2e6;
+            --text: #1c1f24;
+            --muted: #6b7078;
+            --accent: #1a4d2e;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            padding: 24px;
+        }
+        .contenedor {
+            width: 100%;
+            max-width: 720px;
+        }
+        h1 {
+            font-size: 1.6rem;
+            margin: 0 0 4px;
+            text-align: center;
+        }
+        p.subtitulo {
+            text-align: center;
+            color: var(--muted);
+            margin: 0 0 32px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        a.tarjeta {
+            display: block;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        a.tarjeta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        .tarjeta .nombre {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .tarjeta .desc {
+            font-size: 0.92rem;
+            color: var(--muted);
+            margin-bottom: 14px;
+        }
+        .tarjeta .ir {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+        footer {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Simuladores de votación</h1>
+        <p class="subtitulo">Elecciones Municipales 2026 &mdash; Uso no oficial</p>
+        <div class="grid">
+            <a class="tarjeta" href="erico/">
+                <div class="nombre">Simulador Erico</div>
+                <div class="desc">Simulación de la Boleta Única Electrónica.</div>
+                <div class="ir">Entrar →</div>
+            </a>
+            <a class="tarjeta" href="cabrera/">
+                <div class="nombre">Simulador Cabrera</div>
+                <div class="desc">Simulación de la Boleta Única Electrónica.</div>
+                <div class="ir">Entrar →</div>
+            </a>
+        </div>
+        <footer>Simuladores de demostración, sin vínculo con la Justicia Electoral.</footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+[
+  {
+    "INT": 411,
+    "codigo": "550",
+    "lista_completa": true
+  },
+  {
+    "INT": 412,
+    "codigo": "551",
+    "lista_completa": true
+  },
+  {
+    "JUN": 7430,
+    "codigo": "552",
+    "lista_completa": true
+  },
+  {
+    "JUN": 7442,
+    "codigo": "553",
+    "lista_completa": true
+  },
+  {
+    "INT": 828,
+    "JUN": 10791,
+    "codigo": "BLC",
+    "lista_completa": true
+  }
+]
