@@ -245,9 +245,11 @@ function get_url_function() {
 function click_si_simulador(){
     // Hacemos override del click_is para adecuar al comportamiento del
     // simulador.
-    var ubic_preseteada = getUrlVar('ubicacion');   
+    // Se omiten los pasos 3, 4 y 5 (verificar, doblar, entintar/depositar) y
+    // se va directo al agradecimiento final.
+    var ubic_preseteada = getUrlVar('ubicacion');
     if (typeof(ubic_preseteada) != "undefined") {
-        (window.top||window).location = "index.html#paso-3";
+        (window.top||window).location = "index.html#agradecimiento";
     } else {
         history.go(0);
     }
