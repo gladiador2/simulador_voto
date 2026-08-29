@@ -108,14 +108,12 @@ function cambiar_url(paso) {
 }
 
 function empezar_demo() {
-    cambiar_url("paso-1");
+    // Se omiten los pasos 1 y 2 (instrucciones de cédula/boletín) y se va
+    // directo a la votación.
     document
         .getElementById("empezar")
         .removeEventListener("click", empezar_demo);
-    const TagBody = document.getElementsByTagName("body");
-    Array.from(TagBody).forEach(function (item) {
-        item.setAttribute("id", "");
-    });
+    ir_a_ubicacion_fija();
 }
 
 function mostrar_siguiente_paso(event) {
