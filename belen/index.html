@@ -1,0 +1,2370 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+    
+<!-- Mirrored from simuladoroficial.tsje.gov.py/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Aug 2026 00:32:22 GMT -->
+<head>
+        <meta name="google" content="notranslate" />
+        <meta charset="utf-8" />
+        <title>Simulador del uso de la máquina de votación</title>
+        <link rel="manifest" href="manifest.json">
+        <!-- <script src="/js/pwa.js"></script> -->
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/boot.css">
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/instructivo.css">
+
+        <script src="js/instructivo.js"></script>
+        <link href="img/favicon.png" rel="shortcut icon" type="image/png">
+    </head>
+    <body class="vanilla">
+        <div id="contenedor">
+            <div id="ayuda">
+                <div id="contenedor-ayuda" class="container">
+                    <header>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12 col-xs-12" id="superior">
+                                    <img class="logo_eleccion_izq" src="img/logo_eleccion.png">
+                                    <a class="navbar-brand" href="javascript:void(0)" style="pointer-events:none;"><span><br /></span></a>
+
+                                </div>
+                                <div class="col-md-6 texto-tribunal col-xs-12">
+                                    <p class="simulador-guia">GUÍA RÁPIDA PARA VOTAR EN LA MÁQUINA DE VOTACIÓN</p>
+                                    <img class="logo_simulador" src="img/header.png">
+                                </div>
+                            </div>
+                    </header>
+
+                    <div id="bienvenido" style="display:none;">
+                        <img class="grafico" src="img/maquina0_p6.png">
+                        <h1>Simulador del uso de la máquina de votación.</h1>
+                        <!-- <h3>Asegúrese de no tener activado el traductor automático en su navegador</h3> -->
+                        <button id="empezar" class="btn btn-success btn-lg">Comenzar</button><br>
+                        
+                    </div>
+
+                    <div id="paso-1" class="paso" style="display:none;">
+                        <img class="grafico" src="img/boleta-troquel.png">
+                        <h1>Presentá tu <b>cédula de identidad civil</b> a los miembros de la mesa receptora de votos, quienes te entregarán el <b>boletín</b> firmado por los dos vocales.</h1>
+                        <button class="next btn btn-primary btn-lg">Continuar</button>
+                    </div>
+
+                    <div id="paso-2" class="paso" style="display:none;">
+                        <img class="grafico" src="img/maquina2_p6.png" id="maquina-boleta">
+                        <h1>Colocá el <b>boletín</b> en la ranura como lo indica la flecha.</h1>
+                    
+                        <button class="next btn btn-primary btn-lg">Continuar</button>
+                    </div>
+                    <div id="ubicaciones" class="paso" style="display:none;">
+					
+						<h1 class="ubicacion">Seleccione <span id="nivel-a-elegir">Partido</span></h1>
+                        <div id="lista-ubicaciones" class="container">
+                            <ul class="elegir_eleccion departamentos col-md-12">
+                                
+                                    <li data-id="59" data-tipo="eleccion" class="btn btn-default btn-lg ubicacion-destino">ELECCIONES MUNICIPALES</li>
+                                
+                            </ul> 
+
+                            
+                                <ul class="elegir_departamento elegir_departamentos col-md-12" data-eleccion="59" style="display: none;">
+                                    
+                                        <li data-id="59.0" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">0-CAPITAL</li>
+                                    
+                                        <li data-id="59.1" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">1-CONCEPCION</li>
+                                    
+                                        <li data-id="59.2" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">2-SAN PEDRO</li>
+                                    
+                                        <li data-id="59.3" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">3-CORDILLERA</li>
+                                    
+                                        <li data-id="59.4" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">4-GUAIRA</li>
+                                    
+                                        <li data-id="59.5" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">5-CAAGUAZU</li>
+                                    
+                                        <li data-id="59.6" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">6-CAAZAPA</li>
+                                    
+                                        <li data-id="59.7" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">7-ITAPUA</li>
+                                    
+                                        <li data-id="59.8" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">8-MISIONES</li>
+                                    
+                                        <li data-id="59.9" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">9-PARAGUARI</li>
+                                    
+                                        <li data-id="59.10" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">10-ALTO PARANA</li>
+                                    
+                                        <li data-id="59.11" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">11-CENTRAL</li>
+                                    
+                                        <li data-id="59.12" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">12-ÑEEMBUCU</li>
+                                    
+                                        <li data-id="59.13" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">13-AMAMBAY</li>
+                                    
+                                        <li data-id="59.14" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">14-CANINDEYU</li>
+                                    
+                                        <li data-id="59.15" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">15-PDTE. HAYES</li>
+                                    
+                                        <li data-id="59.16" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">16-ALTO PARAGUAY</li>
+                                    
+                                        <li data-id="59.17" data-tipo="departamento" class="btn btn-default btn-lg ubicacion-destino">17-BOQUERON</li>
+                                    
+                                </ul> 
+                            
+
+                            
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.0" style="display: none;">
+                                        
+                                            <li data-id="59.0.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-ASUNCION</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.1" style="display: none;">
+                                        
+                                            <li data-id="59.1.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-CONCEPCION</li>
+                                        
+                                            <li data-id="59.1.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-BELEN</li>
+                                        
+                                            <li data-id="59.1.2" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">2-AZOTEY</li>
+                                        
+                                            <li data-id="59.1.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-HORQUETA</li>
+                                        
+                                            <li data-id="59.1.4" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">4-SGTO.JOSE FELIX LOPEZ</li>
+                                        
+                                            <li data-id="59.1.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-LORETO</li>
+                                        
+                                            <li data-id="59.1.6" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">6-SAN CARLOS DEL APA</li>
+                                        
+                                            <li data-id="59.1.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-SAN LAZARO</li>
+                                        
+                                            <li data-id="59.1.8" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">8-SAN ALFREDO</li>
+                                        
+                                            <li data-id="59.1.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-YBY YA’U</li>
+                                        
+                                            <li data-id="59.1.10" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">10-PASO BARRETO</li>
+                                        
+                                            <li data-id="59.1.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-ARROYITO</li>
+                                        
+                                            <li data-id="59.1.12" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">12-PASO HORQUETA</li>
+                                        
+                                            <li data-id="59.1.13" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">13-ITACUA</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.2" style="display: none;">
+                                        
+                                            <li data-id="59.2.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-SAN PEDRO DEL YCUAMANDYYU</li>
+                                        
+                                            <li data-id="59.2.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-25 DE DICIEMBRE</li>
+                                        
+                                            <li data-id="59.2.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-ANTEQUERA</li>
+                                        
+                                            <li data-id="59.2.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-CAPIIVARY</li>
+                                        
+                                            <li data-id="59.2.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-CHORE</li>
+                                        
+                                            <li data-id="59.2.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-GRAL. ELIZARDO AQUINO</li>
+                                        
+                                            <li data-id="59.2.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-GRAL. F. RESQUIN</li>
+                                        
+                                            <li data-id="59.2.13" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">13-GUAJAYVI</li>
+                                        
+                                            <li data-id="59.2.15" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">15-ITACURUBI DEL ROSARIO</li>
+                                        
+                                            <li data-id="59.2.16" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">16-LIBERACION</li>
+                                        
+                                            <li data-id="59.2.17" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">17-LIMA</li>
+                                        
+                                            <li data-id="59.2.19" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">19-NUEVA GERMANIA</li>
+                                        
+                                            <li data-id="59.2.21" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">21-SAN ESTANISLAO</li>
+                                        
+                                            <li data-id="59.2.22" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">22-SAN VICENTE PANCHOLO</li>
+                                        
+                                            <li data-id="59.2.23" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">23-SAN PABLO</li>
+                                        
+                                            <li data-id="59.2.24" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">24-SANTA ROSA DEL AGUARAY</li>
+                                        
+                                            <li data-id="59.2.25" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">25-TACUATI</li>
+                                        
+                                            <li data-id="59.2.27" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">27-UNION</li>
+                                        
+                                            <li data-id="59.2.29" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">29-VILLA DEL ROSARIO</li>
+                                        
+                                            <li data-id="59.2.31" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">31-YATAITY DEL NORTE</li>
+                                        
+                                            <li data-id="59.2.32" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">32-YRYBUCUA</li>
+                                        
+                                            <li data-id="59.2.33" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">33-SAN JOSE DEL ROSARIO</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.3" style="display: none;">
+                                        
+                                            <li data-id="59.3.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-CAACUPE</li>
+                                        
+                                            <li data-id="59.3.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-1RO. DE MARZO</li>
+                                        
+                                            <li data-id="59.3.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-ALTOS</li>
+                                        
+                                            <li data-id="59.3.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-ARROYOS Y ESTEROS</li>
+                                        
+                                            <li data-id="59.3.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-ATYRA</li>
+                                        
+                                            <li data-id="59.3.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-CARAGUATAY</li>
+                                        
+                                            <li data-id="59.3.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-EMBOSCADA</li>
+                                        
+                                            <li data-id="59.3.13" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">13-EUSEBIO AYALA</li>
+                                        
+                                            <li data-id="59.3.15" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">15-ISLA PUCU</li>
+                                        
+                                            <li data-id="59.3.17" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">17-ITACURUBI DE LA CORDILLERA</li>
+                                        
+                                            <li data-id="59.3.19" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">19-JUAN DE MENA</li>
+                                        
+                                            <li data-id="59.3.21" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">21-LOMA GRANDE</li>
+                                        
+                                            <li data-id="59.3.23" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">23-MBOCAYATY DEL YHAGUY</li>
+                                        
+                                            <li data-id="59.3.25" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">25-NUEVA COLOMBIA</li>
+                                        
+                                            <li data-id="59.3.27" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">27-PIRIBEBUY</li>
+                                        
+                                            <li data-id="59.3.29" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">29-SAN BERNARDINO</li>
+                                        
+                                            <li data-id="59.3.31" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">31-SAN JOSE OBRERO</li>
+                                        
+                                            <li data-id="59.3.33" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">33-SANTA ELENA</li>
+                                        
+                                            <li data-id="59.3.35" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">35-TOBATI</li>
+                                        
+                                            <li data-id="59.3.37" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">37-VALENZUELA</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.4" style="display: none;">
+                                        
+                                            <li data-id="59.4.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-VILLARRICA</li>
+                                        
+                                            <li data-id="59.4.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-BORJA</li>
+                                        
+                                            <li data-id="59.4.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-CAP. MAURICIO JOSE TROCHE</li>
+                                        
+                                            <li data-id="59.4.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-CORONEL MARTINEZ</li>
+                                        
+                                            <li data-id="59.4.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-DR. BOTRELL</li>
+                                        
+                                            <li data-id="59.4.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-FELIX PEREZ CARDOZO</li>
+                                        
+                                            <li data-id="59.4.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-GRAL. E. A. GARAY</li>
+                                        
+                                            <li data-id="59.4.13" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">13-INDEPENDENCIA</li>
+                                        
+                                            <li data-id="59.4.15" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">15-ITAPE</li>
+                                        
+                                            <li data-id="59.4.17" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">17-ITURBE</li>
+                                        
+                                            <li data-id="59.4.19" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">19-JOSE A. FASSARDI</li>
+                                        
+                                            <li data-id="59.4.21" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">21-MBOCAYATY DEL GUAIRA</li>
+                                        
+                                            <li data-id="59.4.23" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">23-NATALICIO TALAVERA</li>
+                                        
+                                            <li data-id="59.4.25" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">25-ÑUMI</li>
+                                        
+                                            <li data-id="59.4.27" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">27-PASO YOBAI</li>
+                                        
+                                            <li data-id="59.4.29" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">29-SAN SALVADOR</li>
+                                        
+                                            <li data-id="59.4.30" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">30-TEBICUARY</li>
+                                        
+                                            <li data-id="59.4.31" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">31-YATAITY DEL GUAIRA</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.5" style="display: none;">
+                                        
+                                            <li data-id="59.5.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-CORONEL OVIEDO</li>
+                                        
+                                            <li data-id="59.5.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-3 DE FEBRERO</li>
+                                        
+                                            <li data-id="59.5.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-CAAGUAZU</li>
+                                        
+                                            <li data-id="59.5.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-CARAYAO</li>
+                                        
+                                            <li data-id="59.5.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-DR. CECILIO BAEZ</li>
+                                        
+                                            <li data-id="59.5.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-DR.J. E. ESTIGARRIBIA</li>
+                                        
+                                            <li data-id="59.5.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-DR. JUAN M. FRUTOS</li>
+                                        
+                                            <li data-id="59.5.13" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">13-JOSE DOMINGO OCAMPOS</li>
+                                        
+                                            <li data-id="59.5.15" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">15-LA PASTORA</li>
+                                        
+                                            <li data-id="59.5.17" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">17-FRANCISCO SOLANO LOPEZ</li>
+                                        
+                                            <li data-id="59.5.19" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">19-NUEVA LONDRES</li>
+                                        
+                                            <li data-id="59.5.20" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">20-NUEVA TOLEDO</li>
+                                        
+                                            <li data-id="59.5.21" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">21-R.I. 3 CORRALES</li>
+                                        
+                                            <li data-id="59.5.23" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">23-RAUL ARSENIO OVIEDO</li>
+                                        
+                                            <li data-id="59.5.25" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">25-REPATRIACION</li>
+                                        
+                                            <li data-id="59.5.27" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">27-SAN JOAQUIN</li>
+                                        
+                                            <li data-id="59.5.29" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">29-SAN JOSE DE LOS ARROYOS</li>
+                                        
+                                            <li data-id="59.5.31" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">31-SANTA ROSA DEL MBUTUY</li>
+                                        
+                                            <li data-id="59.5.33" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">33-SIMON BOLIVAR</li>
+                                        
+                                            <li data-id="59.5.34" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">34-TEMBIAPORA</li>
+                                        
+                                            <li data-id="59.5.35" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">35-VAQUERIA</li>
+                                        
+                                            <li data-id="59.5.37" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">37-YHU</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.6" style="display: none;">
+                                        
+                                            <li data-id="59.6.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-CAAZAPA</li>
+                                        
+                                            <li data-id="59.6.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-ABAI</li>
+                                        
+                                            <li data-id="59.6.2" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">2-3 DE MAYO</li>
+                                        
+                                            <li data-id="59.6.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-BUENA VISTA</li>
+                                        
+                                            <li data-id="59.6.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-DR. MOISES BERTONI</li>
+                                        
+                                            <li data-id="59.6.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-FULGENCIO YEGROS</li>
+                                        
+                                            <li data-id="59.6.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-GRAL. MORINIGO</li>
+                                        
+                                            <li data-id="59.6.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-MACIEL</li>
+                                        
+                                            <li data-id="59.6.13" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">13-SAN JUAN NEPOMUCENO</li>
+                                        
+                                            <li data-id="59.6.15" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">15-TAVAI</li>
+                                        
+                                            <li data-id="59.6.17" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">17-YUTY</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.7" style="display: none;">
+                                        
+                                            <li data-id="59.7.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-ENCARNACION</li>
+                                        
+                                            <li data-id="59.7.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-ALTO VERA</li>
+                                        
+                                            <li data-id="59.7.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-BELLA VISTA</li>
+                                        
+                                            <li data-id="59.7.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-CAMBYRETA</li>
+                                        
+                                            <li data-id="59.7.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-CAPITAN MEZA</li>
+                                        
+                                            <li data-id="59.7.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-CAPITAN MIRANDA</li>
+                                        
+                                            <li data-id="59.7.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-CARLOS ANTONIO LOPEZ</li>
+                                        
+                                            <li data-id="59.7.13" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">13-CARMEN DEL PARANA</li>
+                                        
+                                            <li data-id="59.7.15" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">15-CORONEL BOGADO</li>
+                                        
+                                            <li data-id="59.7.17" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">17-EDELIRA</li>
+                                        
+                                            <li data-id="59.7.19" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">19-FRAM</li>
+                                        
+                                            <li data-id="59.7.21" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">21-GENERAL ARTIGAS</li>
+                                        
+                                            <li data-id="59.7.23" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">23-GENERAL DELGADO</li>
+                                        
+                                            <li data-id="59.7.25" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">25-HOHENAU</li>
+                                        
+                                            <li data-id="59.7.27" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">27-ITAPUA POTY</li>
+                                        
+                                            <li data-id="59.7.29" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">29-JESUS</li>
+                                        
+                                            <li data-id="59.7.31" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">31-JOSE LEANDRO OVIEDO</li>
+                                        
+                                            <li data-id="59.7.33" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">33-LA PAZ</li>
+                                        
+                                            <li data-id="59.7.35" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">35-MAYOR OTAÑO</li>
+                                        
+                                            <li data-id="59.7.37" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">37-NATALIO</li>
+                                        
+                                            <li data-id="59.7.39" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">39-NUEVA ALBORADA</li>
+                                        
+                                            <li data-id="59.7.41" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">41-OBLIGADO</li>
+                                        
+                                            <li data-id="59.7.43" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">43-PIRAPO</li>
+                                        
+                                            <li data-id="59.7.45" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">45-SAN COSME Y DAMIAN</li>
+                                        
+                                            <li data-id="59.7.47" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">47-SAN JUAN DEL PARANA</li>
+                                        
+                                            <li data-id="59.7.49" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">49-SAN PEDRO DEL PARANA</li>
+                                        
+                                            <li data-id="59.7.51" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">51-SAN RAFAEL DEL PARANA</li>
+                                        
+                                            <li data-id="59.7.53" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">53-TOMAS ROMERO PEREIRA</li>
+                                        
+                                            <li data-id="59.7.55" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">55-TRINIDAD</li>
+                                        
+                                            <li data-id="59.7.57" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">57-YATYTAY</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.8" style="display: none;">
+                                        
+                                            <li data-id="59.8.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-SAN JUAN BAUTISTA</li>
+                                        
+                                            <li data-id="59.8.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-AYOLAS</li>
+                                        
+                                            <li data-id="59.8.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-SAN IGNACIO</li>
+                                        
+                                            <li data-id="59.8.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-SAN MIGUEL</li>
+                                        
+                                            <li data-id="59.8.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-SAN PATRICIO</li>
+                                        
+                                            <li data-id="59.8.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-SANTA MARIA</li>
+                                        
+                                            <li data-id="59.8.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-SANTA ROSA</li>
+                                        
+                                            <li data-id="59.8.13" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">13-SANTIAGO</li>
+                                        
+                                            <li data-id="59.8.15" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">15-VILLA FLORIDA</li>
+                                        
+                                            <li data-id="59.8.17" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">17-YAVEVYRY</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.9" style="display: none;">
+                                        
+                                            <li data-id="59.9.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-PARAGUARI</li>
+                                        
+                                            <li data-id="59.9.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-ACAHAY</li>
+                                        
+                                            <li data-id="59.9.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-CAAPUCU</li>
+                                        
+                                            <li data-id="59.9.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-CARAPEGUA</li>
+                                        
+                                            <li data-id="59.9.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-ESCOBAR</li>
+                                        
+                                            <li data-id="59.9.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-GRAL. BERNARDINO CABALLERO</li>
+                                        
+                                            <li data-id="59.9.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-LA COLMENA</li>
+                                        
+                                            <li data-id="59.9.12" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">12-MARIA ANTONIA</li>
+                                        
+                                            <li data-id="59.9.13" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">13-MBUYAPEY</li>
+                                        
+                                            <li data-id="59.9.15" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">15-PIRAYU</li>
+                                        
+                                            <li data-id="59.9.17" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">17-QUIINDY</li>
+                                        
+                                            <li data-id="59.9.19" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">19-QUYQUYHO</li>
+                                        
+                                            <li data-id="59.9.21" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">21-SAN ROQUE GONZALEZ</li>
+                                        
+                                            <li data-id="59.9.23" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">23-SAPUCAI</li>
+                                        
+                                            <li data-id="59.9.25" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">25-TEBICUARYMI</li>
+                                        
+                                            <li data-id="59.9.27" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">27-YAGUARON</li>
+                                        
+                                            <li data-id="59.9.29" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">29-YBYCUI</li>
+                                        
+                                            <li data-id="59.9.31" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">31-YBYTYMI</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.10" style="display: none;">
+                                        
+                                            <li data-id="59.10.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-CIUDAD DEL ESTE</li>
+                                        
+                                            <li data-id="59.10.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-DR. J. L. MALLORQUIN</li>
+                                        
+                                            <li data-id="59.10.2" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">2-DR. RAUL PEÑA</li>
+                                        
+                                            <li data-id="59.10.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-DOMINGO MARTINEZ DE IRALA</li>
+                                        
+                                            <li data-id="59.10.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-HERNANDARIAS</li>
+                                        
+                                            <li data-id="59.10.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-IRUÑA</li>
+                                        
+                                            <li data-id="59.10.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-ITAKYRY</li>
+                                        
+                                            <li data-id="59.10.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-JUAN E. O’LEARY</li>
+                                        
+                                            <li data-id="59.10.13" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">13-LOS CEDRALES</li>
+                                        
+                                            <li data-id="59.10.15" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">15-MBARACAYU</li>
+                                        
+                                            <li data-id="59.10.17" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">17-MINGA GUAZU</li>
+                                        
+                                            <li data-id="59.10.19" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">19-MINGA PORA</li>
+                                        
+                                            <li data-id="59.10.21" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">21-NARANJAL</li>
+                                        
+                                            <li data-id="59.10.23" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">23-ÑACUNDAY</li>
+                                        
+                                            <li data-id="59.10.25" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">25-PRESIDENTE FRANCO</li>
+                                        
+                                            <li data-id="59.10.27" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">27-SAN ALBERTO</li>
+                                        
+                                            <li data-id="59.10.29" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">29-SAN CRISTOBAL</li>
+                                        
+                                            <li data-id="59.10.30" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">30-SANTA FE DEL PARANA</li>
+                                        
+                                            <li data-id="59.10.31" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">31-SANTA RITA</li>
+                                        
+                                            <li data-id="59.10.33" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">33-SANTA ROSA DEL MONDAY</li>
+                                        
+                                            <li data-id="59.10.34" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">34-TAVAPY</li>
+                                        
+                                            <li data-id="59.10.35" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">35-YGUAZU</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.11" style="display: none;">
+                                        
+                                            <li data-id="59.11.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-AREGUA</li>
+                                        
+                                            <li data-id="59.11.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-CAPIATA</li>
+                                        
+                                            <li data-id="59.11.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-FERNANDO DE LA MORA</li>
+                                        
+                                            <li data-id="59.11.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-GUARAMBARE</li>
+                                        
+                                            <li data-id="59.11.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-ITA</li>
+                                        
+                                            <li data-id="59.11.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-ITAUGUA</li>
+                                        
+                                            <li data-id="59.11.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-J. AUGUSTO SALDIVAR</li>
+                                        
+                                            <li data-id="59.11.13" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">13-LAMBARE</li>
+                                        
+                                            <li data-id="59.11.15" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">15-LIMPIO</li>
+                                        
+                                            <li data-id="59.11.17" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">17-LUQUE</li>
+                                        
+                                            <li data-id="59.11.19" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">19-MARIANO R. ALONSO</li>
+                                        
+                                            <li data-id="59.11.21" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">21-NUEVA ITALIA</li>
+                                        
+                                            <li data-id="59.11.23" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">23-ÑEMBY</li>
+                                        
+                                            <li data-id="59.11.25" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">25-SAN ANTONIO</li>
+                                        
+                                            <li data-id="59.11.27" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">27-SAN LORENZO</li>
+                                        
+                                            <li data-id="59.11.29" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">29-VILLA ELISA</li>
+                                        
+                                            <li data-id="59.11.31" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">31-VILLETA</li>
+                                        
+                                            <li data-id="59.11.33" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">33-YPACARAI</li>
+                                        
+                                            <li data-id="59.11.35" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">35-YPANE</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.12" style="display: none;">
+                                        
+                                            <li data-id="59.12.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-PILAR</li>
+                                        
+                                            <li data-id="59.12.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-ALBERDI</li>
+                                        
+                                            <li data-id="59.12.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-CERRITO</li>
+                                        
+                                            <li data-id="59.12.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-DESMOCHADOS</li>
+                                        
+                                            <li data-id="59.12.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-GRAL. JOSE E. DIAZ</li>
+                                        
+                                            <li data-id="59.12.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-GUAZU CUA</li>
+                                        
+                                            <li data-id="59.12.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-HUMAITA</li>
+                                        
+                                            <li data-id="59.12.13" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">13-ISLA UMBU</li>
+                                        
+                                            <li data-id="59.12.15" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">15-LAURELES</li>
+                                        
+                                            <li data-id="59.12.17" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">17-MAYOR J. MARTINEZ</li>
+                                        
+                                            <li data-id="59.12.19" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">19-PASO DE PATRIA</li>
+                                        
+                                            <li data-id="59.12.21" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">21-SAN JUAN BAUTISTA</li>
+                                        
+                                            <li data-id="59.12.23" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">23-TACUARAS</li>
+                                        
+                                            <li data-id="59.12.25" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">25-VILLA FRANCA</li>
+                                        
+                                            <li data-id="59.12.27" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">27-VILLA OLIVA</li>
+                                        
+                                            <li data-id="59.12.29" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">29-VILLALBIN</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.13" style="display: none;">
+                                        
+                                            <li data-id="59.13.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-PEDRO J. CABALLERO</li>
+                                        
+                                            <li data-id="59.13.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-BELLA VISTA</li>
+                                        
+                                            <li data-id="59.13.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-CAPITAN BADO</li>
+                                        
+                                            <li data-id="59.13.4" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">4-ZANJA PYTA</li>
+                                        
+                                            <li data-id="59.13.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-KARAPAI</li>
+                                        
+                                            <li data-id="59.13.6" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">6-CERRO CORA</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.14" style="display: none;">
+                                        
+                                            <li data-id="59.14.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-SALTO DEL GUAIRA</li>
+                                        
+                                            <li data-id="59.14.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-CORPUS CHRISTI</li>
+                                        
+                                            <li data-id="59.14.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-FRANCISCO CABALLERO ALVAREZ</li>
+                                        
+                                            <li data-id="59.14.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-ITANARA</li>
+                                        
+                                            <li data-id="59.14.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-KATUETE</li>
+                                        
+                                            <li data-id="59.14.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-LA PALOMA</li>
+                                        
+                                            <li data-id="59.14.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-NUEVA ESPERANZA</li>
+                                        
+                                            <li data-id="59.14.12" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">12-MARACANA</li>
+                                        
+                                            <li data-id="59.14.13" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">13-SAN ISIDRO CURUGUATY</li>
+                                        
+                                            <li data-id="59.14.14" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">14-PTO. ADELA</li>
+                                        
+                                            <li data-id="59.14.15" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">15-VILLA YGATIMI</li>
+                                        
+                                            <li data-id="59.14.16" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">16-YASY CAÑY</li>
+                                        
+                                            <li data-id="59.14.17" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">17-YPE JHU</li>
+                                        
+                                            <li data-id="59.14.18" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">18-YBYRAROVANA</li>
+                                        
+                                            <li data-id="59.14.19" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">19-YBY PYTA</li>
+                                        
+                                            <li data-id="59.14.20" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">20-LAUREL</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.15" style="display: none;">
+                                        
+                                            <li data-id="59.15.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-VILLA HAYES</li>
+                                        
+                                            <li data-id="59.15.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-BENJAMIN ACEVAL</li>
+                                        
+                                            <li data-id="59.15.2" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">2-CAMPO ACEVAL</li>
+                                        
+                                            <li data-id="59.15.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-FORTIN JOSE FALCON</li>
+                                        
+                                            <li data-id="59.15.4" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">4-GRAL. JOSE M. BRUGUEZ</li>
+                                        
+                                            <li data-id="59.15.5" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">5-NANAWA</li>
+                                        
+                                            <li data-id="59.15.6" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">6-NUEVA ASUNCION</li>
+                                        
+                                            <li data-id="59.15.7" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">7-PUERTO PINASCO</li>
+                                        
+                                            <li data-id="59.15.9" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">9-TTE. IRALA FERNANDEZ</li>
+                                        
+                                            <li data-id="59.15.11" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">11-TTE. ESTEBAN MARTINEZ</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.16" style="display: none;">
+                                        
+                                            <li data-id="59.16.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-FUERTE OLIMPO</li>
+                                        
+                                            <li data-id="59.16.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-PUERTO CASADO</li>
+                                        
+                                            <li data-id="59.16.2" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">2-CARMELO PERALTA</li>
+                                        
+                                            <li data-id="59.16.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-BAHIA NEGRA</li>
+                                        
+                                    </ul> 
+                                
+                                    <ul class="elegir_distrito departamentos col-md-12" data-departamento="59.17" style="display: none;">
+                                        
+                                            <li data-id="59.17.0" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">0-FILADELFIA</li>
+                                        
+                                            <li data-id="59.17.1" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">1-LOMA PLATA</li>
+                                        
+                                            <li data-id="59.17.3" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">3-MCAL.ESTIGARRIBIA</li>
+                                        
+                                            <li data-id="59.17.4" data-tipo="distrito" class="btn btn-default btn-lg ubicacion-destino">4-BOQUERON</li>
+                                        
+                                    </ul> 
+                                
+                            
+
+                            
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.0.0" style="display: none;">
+											
+												<li data-id="59.0.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 0-CAPITAL / 0-ASUNCION / 4-La Recoleta                   " class="btn btn-default btn-lg ubicacion-destino">4-La Recoleta                   </li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.0" style="display: none;">
+											
+												<li data-id="59.1.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 0-CONCEPCION / 0-Concepcion" class="btn btn-default btn-lg ubicacion-destino">0-Concepcion</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.1" style="display: none;">
+											
+												<li data-id="59.1.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 1-BELEN / 0-Belen" class="btn btn-default btn-lg ubicacion-destino">0-Belen</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.2" style="display: none;">
+											
+												<li data-id="59.1.2" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 2-AZOTEY / 0-Azotey" class="btn btn-default btn-lg ubicacion-destino">0-Azotey</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.3" style="display: none;">
+											
+												<li data-id="59.1.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 3-HORQUETA / 0-Horqueta                      " class="btn btn-default btn-lg ubicacion-destino">0-Horqueta                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.4" style="display: none;">
+											
+												<li data-id="59.1.4" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 4-SGTO.JOSE FELIX LOPEZ / 0-Sgto.Felix Lopez  (Puentesiño)" class="btn btn-default btn-lg ubicacion-destino">0-Sgto.Felix Lopez  (Puentesiño)</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.5" style="display: none;">
+											
+												<li data-id="59.1.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 5-LORETO / 0-Loreto                        " class="btn btn-default btn-lg ubicacion-destino">0-Loreto                        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.6" style="display: none;">
+											
+												<li data-id="59.1.6" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 6-SAN CARLOS DEL APA / 0-San Carlos" class="btn btn-default btn-lg ubicacion-destino">0-San Carlos</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.7" style="display: none;">
+											
+												<li data-id="59.1.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 7-SAN LAZARO / 1-Vallemi                       " class="btn btn-default btn-lg ubicacion-destino">1-Vallemi                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.8" style="display: none;">
+											
+												<li data-id="59.1.8" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 8-SAN ALFREDO / 0-San Alfredo" class="btn btn-default btn-lg ubicacion-destino">0-San Alfredo</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.9" style="display: none;">
+											
+												<li data-id="59.1.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 9-YBY YA’U / 0-Yby Ya’U" class="btn btn-default btn-lg ubicacion-destino">0-Yby Ya’U</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.10" style="display: none;">
+											
+												<li data-id="59.1.10" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 10-PASO BARRETO / 0-Paso Barreto" class="btn btn-default btn-lg ubicacion-destino">0-Paso Barreto</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.11" style="display: none;">
+											
+												<li data-id="59.1.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 11-ARROYITO / 0-Arroyito" class="btn btn-default btn-lg ubicacion-destino">0-Arroyito</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.12" style="display: none;">
+											
+												<li data-id="59.1.12" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 12-PASO HORQUETA / 0-Paso Horqueta" class="btn btn-default btn-lg ubicacion-destino">0-Paso Horqueta</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.1.13" style="display: none;">
+											
+												<li data-id="59.1.13" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 1-CONCEPCION / 13-ITACUA / 0-Itacua" class="btn btn-default btn-lg ubicacion-destino">0-Itacua</li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.0" style="display: none;">
+											
+												<li data-id="59.2.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 0-SAN PEDRO DEL YCUAMANDYYU / 0-San Pedro Del Ycuamandyyu     " class="btn btn-default btn-lg ubicacion-destino">0-San Pedro Del Ycuamandyyu     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.1" style="display: none;">
+											
+												<li data-id="59.2.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 1-25 DE DICIEMBRE / 0-25 De Diciembre               " class="btn btn-default btn-lg ubicacion-destino">0-25 De Diciembre               </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.3" style="display: none;">
+											
+												<li data-id="59.2.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 3-ANTEQUERA / 0-Antequera                     " class="btn btn-default btn-lg ubicacion-destino">0-Antequera                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.5" style="display: none;">
+											
+												<li data-id="59.2.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 5-CAPIIVARY / 0-Capiivary                     " class="btn btn-default btn-lg ubicacion-destino">0-Capiivary                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.7" style="display: none;">
+											
+												<li data-id="59.2.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 7-CHORE / 0-Chore                         " class="btn btn-default btn-lg ubicacion-destino">0-Chore                         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.9" style="display: none;">
+											
+												<li data-id="59.2.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 9-GRAL. ELIZARDO AQUINO / 0-Gral. Elizardo Aquino         " class="btn btn-default btn-lg ubicacion-destino">0-Gral. Elizardo Aquino         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.11" style="display: none;">
+											
+												<li data-id="59.2.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 11-GRAL. F. RESQUIN / 0-Gral. Francisco Resquin       " class="btn btn-default btn-lg ubicacion-destino">0-Gral. Francisco Resquin       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.13" style="display: none;">
+											
+												<li data-id="59.2.13" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 13-GUAJAYVI / 0-Guajayvi                      " class="btn btn-default btn-lg ubicacion-destino">0-Guajayvi                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.15" style="display: none;">
+											
+												<li data-id="59.2.15" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 15-ITACURUBI DEL ROSARIO / 0-Itacurubi Del Rosario         " class="btn btn-default btn-lg ubicacion-destino">0-Itacurubi Del Rosario         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.16" style="display: none;">
+											
+												<li data-id="59.2.16" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 16-LIBERACION / 0-Liberacion" class="btn btn-default btn-lg ubicacion-destino">0-Liberacion</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.17" style="display: none;">
+											
+												<li data-id="59.2.17" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 17-LIMA / 0-Lima                          " class="btn btn-default btn-lg ubicacion-destino">0-Lima                          </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.19" style="display: none;">
+											
+												<li data-id="59.2.19" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 19-NUEVA GERMANIA / 0-Nueva Germania                " class="btn btn-default btn-lg ubicacion-destino">0-Nueva Germania                </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.21" style="display: none;">
+											
+												<li data-id="59.2.21" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 21-SAN ESTANISLAO / 0-San Estanislao                " class="btn btn-default btn-lg ubicacion-destino">0-San Estanislao                </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.22" style="display: none;">
+											
+												<li data-id="59.2.22" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 22-SAN VICENTE PANCHOLO / 0-San Vicente Pancholo" class="btn btn-default btn-lg ubicacion-destino">0-San Vicente Pancholo</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.23" style="display: none;">
+											
+												<li data-id="59.2.23" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 23-SAN PABLO / 0-San Pablo                     " class="btn btn-default btn-lg ubicacion-destino">0-San Pablo                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.24" style="display: none;">
+											
+												<li data-id="59.2.24" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 24-SANTA ROSA DEL AGUARAY / 0-Sta.Rosa Del Aguaray" class="btn btn-default btn-lg ubicacion-destino">0-Sta.Rosa Del Aguaray</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.25" style="display: none;">
+											
+												<li data-id="59.2.25" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 25-TACUATI / 0-Tacuati                       " class="btn btn-default btn-lg ubicacion-destino">0-Tacuati                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.27" style="display: none;">
+											
+												<li data-id="59.2.27" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 27-UNION / 0-Union                         " class="btn btn-default btn-lg ubicacion-destino">0-Union                         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.29" style="display: none;">
+											
+												<li data-id="59.2.29" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 29-VILLA DEL ROSARIO / 0-Villa Del Rosario             " class="btn btn-default btn-lg ubicacion-destino">0-Villa Del Rosario             </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.31" style="display: none;">
+											
+												<li data-id="59.2.31" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 31-YATAITY DEL NORTE / 0-Yataity Del Norte             " class="btn btn-default btn-lg ubicacion-destino">0-Yataity Del Norte             </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.32" style="display: none;">
+											
+												<li data-id="59.2.32" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 32-YRYBUCUA / 0-Yrybucua" class="btn btn-default btn-lg ubicacion-destino">0-Yrybucua</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.2.33" style="display: none;">
+											
+												<li data-id="59.2.33" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 2-SAN PEDRO / 33-SAN JOSE DEL ROSARIO / 0-San Jose Del Rosario" class="btn btn-default btn-lg ubicacion-destino">0-San Jose Del Rosario</li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.0" style="display: none;">
+											
+												<li data-id="59.3.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 0-CAACUPE / 0-Caacupe                       " class="btn btn-default btn-lg ubicacion-destino">0-Caacupe                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.1" style="display: none;">
+											
+												<li data-id="59.3.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 1-1RO. DE MARZO / 0-1Ro. De Marzo" class="btn btn-default btn-lg ubicacion-destino">0-1Ro. De Marzo</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.3" style="display: none;">
+											
+												<li data-id="59.3.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 3-ALTOS / 0-Altos                         " class="btn btn-default btn-lg ubicacion-destino">0-Altos                         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.5" style="display: none;">
+											
+												<li data-id="59.3.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 5-ARROYOS Y ESTEROS / 0-Arroyos Y Esteros             " class="btn btn-default btn-lg ubicacion-destino">0-Arroyos Y Esteros             </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.7" style="display: none;">
+											
+												<li data-id="59.3.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 7-ATYRA / 0-Atyra                         " class="btn btn-default btn-lg ubicacion-destino">0-Atyra                         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.9" style="display: none;">
+											
+												<li data-id="59.3.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 9-CARAGUATAY / 0-Caraguatay                    " class="btn btn-default btn-lg ubicacion-destino">0-Caraguatay                    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.11" style="display: none;">
+											
+												<li data-id="59.3.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 11-EMBOSCADA / 0-Emboscada                     " class="btn btn-default btn-lg ubicacion-destino">0-Emboscada                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.13" style="display: none;">
+											
+												<li data-id="59.3.13" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 13-EUSEBIO AYALA / 0-Eusebio Ayala                 " class="btn btn-default btn-lg ubicacion-destino">0-Eusebio Ayala                 </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.15" style="display: none;">
+											
+												<li data-id="59.3.15" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 15-ISLA PUCU / 0-Isla Pucu                     " class="btn btn-default btn-lg ubicacion-destino">0-Isla Pucu                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.17" style="display: none;">
+											
+												<li data-id="59.3.17" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 17-ITACURUBI DE LA CORDILLERA / 0-Itac. De La Cordillera        " class="btn btn-default btn-lg ubicacion-destino">0-Itac. De La Cordillera        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.19" style="display: none;">
+											
+												<li data-id="59.3.19" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 19-JUAN DE MENA / 0-Juan De Mena                  " class="btn btn-default btn-lg ubicacion-destino">0-Juan De Mena                  </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.21" style="display: none;">
+											
+												<li data-id="59.3.21" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 21-LOMA GRANDE / 0-Loma Grande                   " class="btn btn-default btn-lg ubicacion-destino">0-Loma Grande                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.23" style="display: none;">
+											
+												<li data-id="59.3.23" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 23-MBOCAYATY DEL YHAGUY / 0-Mbocayaty Del Yhaguy          " class="btn btn-default btn-lg ubicacion-destino">0-Mbocayaty Del Yhaguy          </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.25" style="display: none;">
+											
+												<li data-id="59.3.25" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 25-NUEVA COLOMBIA / 0-Nueva Colombia                " class="btn btn-default btn-lg ubicacion-destino">0-Nueva Colombia                </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.27" style="display: none;">
+											
+												<li data-id="59.3.27" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 27-PIRIBEBUY / 0-Piribebuy                     " class="btn btn-default btn-lg ubicacion-destino">0-Piribebuy                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.29" style="display: none;">
+											
+												<li data-id="59.3.29" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 29-SAN BERNARDINO / 0-San Bernardino                " class="btn btn-default btn-lg ubicacion-destino">0-San Bernardino                </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.31" style="display: none;">
+											
+												<li data-id="59.3.31" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 31-SAN JOSE OBRERO / 0-San Jose Obrero               " class="btn btn-default btn-lg ubicacion-destino">0-San Jose Obrero               </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.33" style="display: none;">
+											
+												<li data-id="59.3.33" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 33-SANTA ELENA / 0-Santa Elena                   " class="btn btn-default btn-lg ubicacion-destino">0-Santa Elena                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.35" style="display: none;">
+											
+												<li data-id="59.3.35" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 35-TOBATI / 0-Tobati                        " class="btn btn-default btn-lg ubicacion-destino">0-Tobati                        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.3.37" style="display: none;">
+											
+												<li data-id="59.3.37" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 3-CORDILLERA / 37-VALENZUELA / 0-Valenzuela                    " class="btn btn-default btn-lg ubicacion-destino">0-Valenzuela                    </li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.0" style="display: none;">
+											
+												<li data-id="59.4.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 0-VILLARRICA / 0-Villarrica                    " class="btn btn-default btn-lg ubicacion-destino">0-Villarrica                    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.1" style="display: none;">
+											
+												<li data-id="59.4.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 1-BORJA / 0-Borja                         " class="btn btn-default btn-lg ubicacion-destino">0-Borja                         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.3" style="display: none;">
+											
+												<li data-id="59.4.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 3-CAP. MAURICIO JOSE TROCHE / 0-Cap. Mauricio Jose Troche     " class="btn btn-default btn-lg ubicacion-destino">0-Cap. Mauricio Jose Troche     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.5" style="display: none;">
+											
+												<li data-id="59.4.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 5-CORONEL MARTINEZ / 0-Coronel Martinez              " class="btn btn-default btn-lg ubicacion-destino">0-Coronel Martinez              </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.7" style="display: none;">
+											
+												<li data-id="59.4.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 7-DR. BOTRELL / 0-Dr. Botrell                   " class="btn btn-default btn-lg ubicacion-destino">0-Dr. Botrell                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.9" style="display: none;">
+											
+												<li data-id="59.4.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 9-FELIX PEREZ CARDOZO / 0-Felix Perez Cardozo           " class="btn btn-default btn-lg ubicacion-destino">0-Felix Perez Cardozo           </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.11" style="display: none;">
+											
+												<li data-id="59.4.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 11-GRAL. E. A. GARAY / 0-Gral. Eugenio A. Garay        " class="btn btn-default btn-lg ubicacion-destino">0-Gral. Eugenio A. Garay        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.13" style="display: none;">
+											
+												<li data-id="59.4.13" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 13-INDEPENDENCIA / 0-Independencia                 " class="btn btn-default btn-lg ubicacion-destino">0-Independencia                 </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.15" style="display: none;">
+											
+												<li data-id="59.4.15" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 15-ITAPE / 0-Itape                         " class="btn btn-default btn-lg ubicacion-destino">0-Itape                         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.17" style="display: none;">
+											
+												<li data-id="59.4.17" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 17-ITURBE / 0-Iturbe                        " class="btn btn-default btn-lg ubicacion-destino">0-Iturbe                        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.19" style="display: none;">
+											
+												<li data-id="59.4.19" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 19-JOSE A. FASSARDI / 0-Jose A. Fassardi              " class="btn btn-default btn-lg ubicacion-destino">0-Jose A. Fassardi              </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.21" style="display: none;">
+											
+												<li data-id="59.4.21" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 21-MBOCAYATY DEL GUAIRA / 0-Mbocayaty Del Guaira          " class="btn btn-default btn-lg ubicacion-destino">0-Mbocayaty Del Guaira          </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.23" style="display: none;">
+											
+												<li data-id="59.4.23" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 23-NATALICIO TALAVERA / 0-Natalicio Talavera            " class="btn btn-default btn-lg ubicacion-destino">0-Natalicio Talavera            </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.25" style="display: none;">
+											
+												<li data-id="59.4.25" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 25-ÑUMI / 0-Ñumi                          " class="btn btn-default btn-lg ubicacion-destino">0-Ñumi                          </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.27" style="display: none;">
+											
+												<li data-id="59.4.27" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 27-PASO YOBAI / 0-Paso Yobai                    " class="btn btn-default btn-lg ubicacion-destino">0-Paso Yobai                    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.29" style="display: none;">
+											
+												<li data-id="59.4.29" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 29-SAN SALVADOR / 0-San Salvador                  " class="btn btn-default btn-lg ubicacion-destino">0-San Salvador                  </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.30" style="display: none;">
+											
+												<li data-id="59.4.30" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 30-TEBICUARY / 0-Tebicuary" class="btn btn-default btn-lg ubicacion-destino">0-Tebicuary</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.4.31" style="display: none;">
+											
+												<li data-id="59.4.31" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 4-GUAIRA / 31-YATAITY DEL GUAIRA / 0-Yataity Del Guaira            " class="btn btn-default btn-lg ubicacion-destino">0-Yataity Del Guaira            </li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.0" style="display: none;">
+											
+												<li data-id="59.5.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 0-CORONEL OVIEDO / 0-Coronel Oviedo                " class="btn btn-default btn-lg ubicacion-destino">0-Coronel Oviedo                </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.1" style="display: none;">
+											
+												<li data-id="59.5.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 1-3 DE FEBRERO / 0-3 De Febrero                  " class="btn btn-default btn-lg ubicacion-destino">0-3 De Febrero                  </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.3" style="display: none;">
+											
+												<li data-id="59.5.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 3-CAAGUAZU / 0-Caaguazu                      " class="btn btn-default btn-lg ubicacion-destino">0-Caaguazu                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.5" style="display: none;">
+											
+												<li data-id="59.5.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 5-CARAYAO / 0-Carayao                       " class="btn btn-default btn-lg ubicacion-destino">0-Carayao                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.7" style="display: none;">
+											
+												<li data-id="59.5.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 7-DR. CECILIO BAEZ / 0-Dr. Cecilio Baez              " class="btn btn-default btn-lg ubicacion-destino">0-Dr. Cecilio Baez              </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.9" style="display: none;">
+											
+												<li data-id="59.5.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 9-DR.J. E. ESTIGARRIBIA / 0-Dr. J. Eulogio Estigarribia" class="btn btn-default btn-lg ubicacion-destino">0-Dr. J. Eulogio Estigarribia</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.11" style="display: none;">
+											
+												<li data-id="59.5.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 11-DR. JUAN M. FRUTOS / 0-Dr. Juan M. Frutos            " class="btn btn-default btn-lg ubicacion-destino">0-Dr. Juan M. Frutos            </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.13" style="display: none;">
+											
+												<li data-id="59.5.13" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 13-JOSE DOMINGO OCAMPOS / 0-Jose Domingo Ocampos          " class="btn btn-default btn-lg ubicacion-destino">0-Jose Domingo Ocampos          </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.15" style="display: none;">
+											
+												<li data-id="59.5.15" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 15-LA PASTORA / 0-La Pastora                    " class="btn btn-default btn-lg ubicacion-destino">0-La Pastora                    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.17" style="display: none;">
+											
+												<li data-id="59.5.17" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 17-FRANCISCO SOLANO LOPEZ / 0-Mcal. Francisco S. Lopez      " class="btn btn-default btn-lg ubicacion-destino">0-Mcal. Francisco S. Lopez      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.19" style="display: none;">
+											
+												<li data-id="59.5.19" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 19-NUEVA LONDRES / 0-Nueva Londres                 " class="btn btn-default btn-lg ubicacion-destino">0-Nueva Londres                 </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.20" style="display: none;">
+											
+												<li data-id="59.5.20" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 20-NUEVA TOLEDO / 0-Nueva Toledo" class="btn btn-default btn-lg ubicacion-destino">0-Nueva Toledo</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.21" style="display: none;">
+											
+												<li data-id="59.5.21" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 21-R.I. 3 CORRALES / 0-R.I. 3 Corrales               " class="btn btn-default btn-lg ubicacion-destino">0-R.I. 3 Corrales               </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.23" style="display: none;">
+											
+												<li data-id="59.5.23" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 23-RAUL ARSENIO OVIEDO / 0-Raul Arsenio Oviedo           " class="btn btn-default btn-lg ubicacion-destino">0-Raul Arsenio Oviedo           </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.25" style="display: none;">
+											
+												<li data-id="59.5.25" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 25-REPATRIACION / 0-Repatriacion                  " class="btn btn-default btn-lg ubicacion-destino">0-Repatriacion                  </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.27" style="display: none;">
+											
+												<li data-id="59.5.27" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 27-SAN JOAQUIN / 0-San Joaquin                   " class="btn btn-default btn-lg ubicacion-destino">0-San Joaquin                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.29" style="display: none;">
+											
+												<li data-id="59.5.29" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 29-SAN JOSE DE LOS ARROYOS / 0-San Jose De Los Arroyos       " class="btn btn-default btn-lg ubicacion-destino">0-San Jose De Los Arroyos       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.31" style="display: none;">
+											
+												<li data-id="59.5.31" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 31-SANTA ROSA DEL MBUTUY / 0-Sta.Rosa Del Mbutuy           " class="btn btn-default btn-lg ubicacion-destino">0-Sta.Rosa Del Mbutuy           </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.33" style="display: none;">
+											
+												<li data-id="59.5.33" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 33-SIMON BOLIVAR / 0-Simon Bolivar                 " class="btn btn-default btn-lg ubicacion-destino">0-Simon Bolivar                 </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.34" style="display: none;">
+											
+												<li data-id="59.5.34" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 34-TEMBIAPORA / 0-Tembiapora" class="btn btn-default btn-lg ubicacion-destino">0-Tembiapora</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.35" style="display: none;">
+											
+												<li data-id="59.5.35" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 35-VAQUERIA / 0-Vaqueria                      " class="btn btn-default btn-lg ubicacion-destino">0-Vaqueria                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.5.37" style="display: none;">
+											
+												<li data-id="59.5.37" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 5-CAAGUAZU / 37-YHU / 0-Yhu                           " class="btn btn-default btn-lg ubicacion-destino">0-Yhu                           </li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.6.0" style="display: none;">
+											
+												<li data-id="59.6.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 6-CAAZAPA / 0-CAAZAPA / 0-Caazapa" class="btn btn-default btn-lg ubicacion-destino">0-Caazapa</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.6.1" style="display: none;">
+											
+												<li data-id="59.6.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 6-CAAZAPA / 1-ABAI / 0-Abai" class="btn btn-default btn-lg ubicacion-destino">0-Abai</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.6.2" style="display: none;">
+											
+												<li data-id="59.6.2" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 6-CAAZAPA / 2-3 DE MAYO / 0-3 De Mayo" class="btn btn-default btn-lg ubicacion-destino">0-3 De Mayo</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.6.3" style="display: none;">
+											
+												<li data-id="59.6.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 6-CAAZAPA / 3-BUENA VISTA / 0-Buena Vista                   " class="btn btn-default btn-lg ubicacion-destino">0-Buena Vista                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.6.5" style="display: none;">
+											
+												<li data-id="59.6.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 6-CAAZAPA / 5-DR. MOISES BERTONI / 0-Dr. Moises Bertoni" class="btn btn-default btn-lg ubicacion-destino">0-Dr. Moises Bertoni</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.6.7" style="display: none;">
+											
+												<li data-id="59.6.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 6-CAAZAPA / 7-FULGENCIO YEGROS / 0-Fulgencio Yegros              " class="btn btn-default btn-lg ubicacion-destino">0-Fulgencio Yegros              </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.6.9" style="display: none;">
+											
+												<li data-id="59.6.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 6-CAAZAPA / 9-GRAL. MORINIGO / 0-Gral.Morinigo                 " class="btn btn-default btn-lg ubicacion-destino">0-Gral.Morinigo                 </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.6.11" style="display: none;">
+											
+												<li data-id="59.6.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 6-CAAZAPA / 11-MACIEL / 0-Maciel                        " class="btn btn-default btn-lg ubicacion-destino">0-Maciel                        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.6.13" style="display: none;">
+											
+												<li data-id="59.6.13" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 6-CAAZAPA / 13-SAN JUAN NEPOMUCENO / 0-San Juan Nepomuceno           " class="btn btn-default btn-lg ubicacion-destino">0-San Juan Nepomuceno           </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.6.15" style="display: none;">
+											
+												<li data-id="59.6.15" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 6-CAAZAPA / 15-TAVAI / 0-Tavai" class="btn btn-default btn-lg ubicacion-destino">0-Tavai</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.6.17" style="display: none;">
+											
+												<li data-id="59.6.17" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 6-CAAZAPA / 17-YUTY / 0-Yuty                          " class="btn btn-default btn-lg ubicacion-destino">0-Yuty                          </li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.0" style="display: none;">
+											
+												<li data-id="59.7.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 0-ENCARNACION / 0-Encarnacion                   " class="btn btn-default btn-lg ubicacion-destino">0-Encarnacion                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.1" style="display: none;">
+											
+												<li data-id="59.7.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 1-ALTO VERA / 0-Alto Vera                     " class="btn btn-default btn-lg ubicacion-destino">0-Alto Vera                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.3" style="display: none;">
+											
+												<li data-id="59.7.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 3-BELLA VISTA / 0-Bella Vista                   " class="btn btn-default btn-lg ubicacion-destino">0-Bella Vista                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.5" style="display: none;">
+											
+												<li data-id="59.7.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 5-CAMBYRETA / 0-Cambyreta                     " class="btn btn-default btn-lg ubicacion-destino">0-Cambyreta                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.7" style="display: none;">
+											
+												<li data-id="59.7.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 7-CAPITAN MEZA / 0-Capitan Meza                  " class="btn btn-default btn-lg ubicacion-destino">0-Capitan Meza                  </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.9" style="display: none;">
+											
+												<li data-id="59.7.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 9-CAPITAN MIRANDA / 0-Capitan Miranda               " class="btn btn-default btn-lg ubicacion-destino">0-Capitan Miranda               </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.11" style="display: none;">
+											
+												<li data-id="59.7.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 11-CARLOS ANTONIO LOPEZ / 0-Carlos Antonio Lopez          " class="btn btn-default btn-lg ubicacion-destino">0-Carlos Antonio Lopez          </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.13" style="display: none;">
+											
+												<li data-id="59.7.13" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 13-CARMEN DEL PARANA / 0-Carmen Del Parana             " class="btn btn-default btn-lg ubicacion-destino">0-Carmen Del Parana             </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.15" style="display: none;">
+											
+												<li data-id="59.7.15" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 15-CORONEL BOGADO / 0-Coronel Bogado                " class="btn btn-default btn-lg ubicacion-destino">0-Coronel Bogado                </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.17" style="display: none;">
+											
+												<li data-id="59.7.17" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 17-EDELIRA / 0-Edelira                       " class="btn btn-default btn-lg ubicacion-destino">0-Edelira                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.19" style="display: none;">
+											
+												<li data-id="59.7.19" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 19-FRAM / 0-Fram                          " class="btn btn-default btn-lg ubicacion-destino">0-Fram                          </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.21" style="display: none;">
+											
+												<li data-id="59.7.21" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 21-GENERAL ARTIGAS / 0-General Artigas               " class="btn btn-default btn-lg ubicacion-destino">0-General Artigas               </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.23" style="display: none;">
+											
+												<li data-id="59.7.23" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 23-GENERAL DELGADO / 0-General Delgado               " class="btn btn-default btn-lg ubicacion-destino">0-General Delgado               </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.25" style="display: none;">
+											
+												<li data-id="59.7.25" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 25-HOHENAU / 0-Hohenau                       " class="btn btn-default btn-lg ubicacion-destino">0-Hohenau                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.27" style="display: none;">
+											
+												<li data-id="59.7.27" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 27-ITAPUA POTY / 0-Itapua Poty                   " class="btn btn-default btn-lg ubicacion-destino">0-Itapua Poty                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.29" style="display: none;">
+											
+												<li data-id="59.7.29" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 29-JESUS / 0-Jesus                         " class="btn btn-default btn-lg ubicacion-destino">0-Jesus                         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.31" style="display: none;">
+											
+												<li data-id="59.7.31" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 31-JOSE LEANDRO OVIEDO / 0-Jose Leandro Oviedo           " class="btn btn-default btn-lg ubicacion-destino">0-Jose Leandro Oviedo           </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.33" style="display: none;">
+											
+												<li data-id="59.7.33" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 33-LA PAZ / 0-La Paz                        " class="btn btn-default btn-lg ubicacion-destino">0-La Paz                        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.35" style="display: none;">
+											
+												<li data-id="59.7.35" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 35-MAYOR OTAÑO / 0-Mayor Otaño                   " class="btn btn-default btn-lg ubicacion-destino">0-Mayor Otaño                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.37" style="display: none;">
+											
+												<li data-id="59.7.37" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 37-NATALIO / 0-Natalio                       " class="btn btn-default btn-lg ubicacion-destino">0-Natalio                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.39" style="display: none;">
+											
+												<li data-id="59.7.39" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 39-NUEVA ALBORADA / 0-Nueva Alborada                " class="btn btn-default btn-lg ubicacion-destino">0-Nueva Alborada                </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.41" style="display: none;">
+											
+												<li data-id="59.7.41" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 41-OBLIGADO / 0-Obligado                      " class="btn btn-default btn-lg ubicacion-destino">0-Obligado                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.43" style="display: none;">
+											
+												<li data-id="59.7.43" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 43-PIRAPO / 0-Pirapo                        " class="btn btn-default btn-lg ubicacion-destino">0-Pirapo                        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.45" style="display: none;">
+											
+												<li data-id="59.7.45" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 45-SAN COSME Y DAMIAN / 0-San Cosme Y Damian            " class="btn btn-default btn-lg ubicacion-destino">0-San Cosme Y Damian            </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.47" style="display: none;">
+											
+												<li data-id="59.7.47" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 47-SAN JUAN DEL PARANA / 0-San Juan Del Parana           " class="btn btn-default btn-lg ubicacion-destino">0-San Juan Del Parana           </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.49" style="display: none;">
+											
+												<li data-id="59.7.49" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 49-SAN PEDRO DEL PARANA / 0-San Pedro Del Parana          " class="btn btn-default btn-lg ubicacion-destino">0-San Pedro Del Parana          </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.51" style="display: none;">
+											
+												<li data-id="59.7.51" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 51-SAN RAFAEL DEL PARANA / 0-San Rafael Del Parana         " class="btn btn-default btn-lg ubicacion-destino">0-San Rafael Del Parana         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.53" style="display: none;">
+											
+												<li data-id="59.7.53" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 53-TOMAS ROMERO PEREIRA / 0-Tomas Romero Pereira          " class="btn btn-default btn-lg ubicacion-destino">0-Tomas Romero Pereira          </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.55" style="display: none;">
+											
+												<li data-id="59.7.55" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 55-TRINIDAD / 0-Trinidad                      " class="btn btn-default btn-lg ubicacion-destino">0-Trinidad                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.7.57" style="display: none;">
+											
+												<li data-id="59.7.57" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 7-ITAPUA / 57-YATYTAY / 0-Yatytay                       " class="btn btn-default btn-lg ubicacion-destino">0-Yatytay                       </li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.8.0" style="display: none;">
+											
+												<li data-id="59.8.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 8-MISIONES / 0-SAN JUAN BAUTISTA / 0-San Juan Bautista             " class="btn btn-default btn-lg ubicacion-destino">0-San Juan Bautista             </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.8.1" style="display: none;">
+											
+												<li data-id="59.8.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 8-MISIONES / 1-AYOLAS / 0-Ayolas                        " class="btn btn-default btn-lg ubicacion-destino">0-Ayolas                        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.8.3" style="display: none;">
+											
+												<li data-id="59.8.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 8-MISIONES / 3-SAN IGNACIO / 0-San Ignacio                   " class="btn btn-default btn-lg ubicacion-destino">0-San Ignacio                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.8.5" style="display: none;">
+											
+												<li data-id="59.8.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 8-MISIONES / 5-SAN MIGUEL / 0-San Miguel                    " class="btn btn-default btn-lg ubicacion-destino">0-San Miguel                    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.8.7" style="display: none;">
+											
+												<li data-id="59.8.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 8-MISIONES / 7-SAN PATRICIO / 0-San Patricio                  " class="btn btn-default btn-lg ubicacion-destino">0-San Patricio                  </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.8.9" style="display: none;">
+											
+												<li data-id="59.8.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 8-MISIONES / 9-SANTA MARIA / 0-Santa Maria                   " class="btn btn-default btn-lg ubicacion-destino">0-Santa Maria                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.8.11" style="display: none;">
+											
+												<li data-id="59.8.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 8-MISIONES / 11-SANTA ROSA / 0-Santa Rosa                    " class="btn btn-default btn-lg ubicacion-destino">0-Santa Rosa                    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.8.13" style="display: none;">
+											
+												<li data-id="59.8.13" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 8-MISIONES / 13-SANTIAGO / 0-Santiago                      " class="btn btn-default btn-lg ubicacion-destino">0-Santiago                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.8.15" style="display: none;">
+											
+												<li data-id="59.8.15" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 8-MISIONES / 15-VILLA FLORIDA / 0-Villa Florida                 " class="btn btn-default btn-lg ubicacion-destino">0-Villa Florida                 </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.8.17" style="display: none;">
+											
+												<li data-id="59.8.17" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 8-MISIONES / 17-YAVEVYRY / 0-Yavevyry                      " class="btn btn-default btn-lg ubicacion-destino">0-Yavevyry                      </li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.0" style="display: none;">
+											
+												<li data-id="59.9.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 0-PARAGUARI / 0-Paraguari                     " class="btn btn-default btn-lg ubicacion-destino">0-Paraguari                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.1" style="display: none;">
+											
+												<li data-id="59.9.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 1-ACAHAY / 0-Acahay                        " class="btn btn-default btn-lg ubicacion-destino">0-Acahay                        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.3" style="display: none;">
+											
+												<li data-id="59.9.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 3-CAAPUCU / 0-Caapucu                       " class="btn btn-default btn-lg ubicacion-destino">0-Caapucu                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.5" style="display: none;">
+											
+												<li data-id="59.9.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 5-CARAPEGUA / 0-Carapegua                     " class="btn btn-default btn-lg ubicacion-destino">0-Carapegua                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.7" style="display: none;">
+											
+												<li data-id="59.9.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 7-ESCOBAR / 0-Escobar                       " class="btn btn-default btn-lg ubicacion-destino">0-Escobar                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.9" style="display: none;">
+											
+												<li data-id="59.9.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 9-GRAL. BERNARDINO CABALLERO / 0-Gral. Bernardino Caballero    " class="btn btn-default btn-lg ubicacion-destino">0-Gral. Bernardino Caballero    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.11" style="display: none;">
+											
+												<li data-id="59.9.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 11-LA COLMENA / 0-La Colmena                    " class="btn btn-default btn-lg ubicacion-destino">0-La Colmena                    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.12" style="display: none;">
+											
+												<li data-id="59.9.12" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 12-MARIA ANTONIA / 0-Maria Antonia" class="btn btn-default btn-lg ubicacion-destino">0-Maria Antonia</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.13" style="display: none;">
+											
+												<li data-id="59.9.13" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 13-MBUYAPEY / 0-Mbuyapey                      " class="btn btn-default btn-lg ubicacion-destino">0-Mbuyapey                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.15" style="display: none;">
+											
+												<li data-id="59.9.15" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 15-PIRAYU / 0-Pirayu                        " class="btn btn-default btn-lg ubicacion-destino">0-Pirayu                        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.17" style="display: none;">
+											
+												<li data-id="59.9.17" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 17-QUIINDY / 0-Quiindy                       " class="btn btn-default btn-lg ubicacion-destino">0-Quiindy                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.19" style="display: none;">
+											
+												<li data-id="59.9.19" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 19-QUYQUYHO / 0-Quyquyho                      " class="btn btn-default btn-lg ubicacion-destino">0-Quyquyho                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.21" style="display: none;">
+											
+												<li data-id="59.9.21" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 21-SAN ROQUE GONZALEZ / 0-San Roque Gonzalez            " class="btn btn-default btn-lg ubicacion-destino">0-San Roque Gonzalez            </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.23" style="display: none;">
+											
+												<li data-id="59.9.23" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 23-SAPUCAI / 0-Sapucai                       " class="btn btn-default btn-lg ubicacion-destino">0-Sapucai                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.25" style="display: none;">
+											
+												<li data-id="59.9.25" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 25-TEBICUARYMI / 0-Tebicuarymi                   " class="btn btn-default btn-lg ubicacion-destino">0-Tebicuarymi                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.27" style="display: none;">
+											
+												<li data-id="59.9.27" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 27-YAGUARON / 0-Yaguaron                      " class="btn btn-default btn-lg ubicacion-destino">0-Yaguaron                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.29" style="display: none;">
+											
+												<li data-id="59.9.29" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 29-YBYCUI / 0-Ybycui                        " class="btn btn-default btn-lg ubicacion-destino">0-Ybycui                        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.9.31" style="display: none;">
+											
+												<li data-id="59.9.31" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 9-PARAGUARI / 31-YBYTYMI / 0-Ybytymi                       " class="btn btn-default btn-lg ubicacion-destino">0-Ybytymi                       </li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.0" style="display: none;">
+											
+												<li data-id="59.10.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 0-CIUDAD DEL ESTE / 0-Ciudad Del Este               " class="btn btn-default btn-lg ubicacion-destino">0-Ciudad Del Este               </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.1" style="display: none;">
+											
+												<li data-id="59.10.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 1-DR. J. L. MALLORQUIN / 0-Dr. J. L.  Mallorquin         " class="btn btn-default btn-lg ubicacion-destino">0-Dr. J. L.  Mallorquin         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.2" style="display: none;">
+											
+												<li data-id="59.10.2" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 2-DR. RAUL PEÑA / 0-Dr. Raul Peña" class="btn btn-default btn-lg ubicacion-destino">0-Dr. Raul Peña</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.3" style="display: none;">
+											
+												<li data-id="59.10.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 3-DOMINGO MARTINEZ DE IRALA / 0-Domingo M. De Irala           " class="btn btn-default btn-lg ubicacion-destino">0-Domingo M. De Irala           </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.5" style="display: none;">
+											
+												<li data-id="59.10.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 5-HERNANDARIAS / 0-Hernandarias                  " class="btn btn-default btn-lg ubicacion-destino">0-Hernandarias                  </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.7" style="display: none;">
+											
+												<li data-id="59.10.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 7-IRUÑA / 0-Iruña                         " class="btn btn-default btn-lg ubicacion-destino">0-Iruña                         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.9" style="display: none;">
+											
+												<li data-id="59.10.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 9-ITAKYRY / 0-Itakyry                       " class="btn btn-default btn-lg ubicacion-destino">0-Itakyry                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.11" style="display: none;">
+											
+												<li data-id="59.10.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 11-JUAN E. O’LEARY / 0-Juan E. O’Leary               " class="btn btn-default btn-lg ubicacion-destino">0-Juan E. O’Leary               </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.13" style="display: none;">
+											
+												<li data-id="59.10.13" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 13-LOS CEDRALES / 0-Los Cedrales                  " class="btn btn-default btn-lg ubicacion-destino">0-Los Cedrales                  </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.15" style="display: none;">
+											
+												<li data-id="59.10.15" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 15-MBARACAYU / 0-Mbaracayu                     " class="btn btn-default btn-lg ubicacion-destino">0-Mbaracayu                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.17" style="display: none;">
+											
+												<li data-id="59.10.17" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 17-MINGA GUAZU / 0-Minga Guazu                   " class="btn btn-default btn-lg ubicacion-destino">0-Minga Guazu                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.19" style="display: none;">
+											
+												<li data-id="59.10.19" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 19-MINGA PORA / 0-Minga Pora                    " class="btn btn-default btn-lg ubicacion-destino">0-Minga Pora                    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.21" style="display: none;">
+											
+												<li data-id="59.10.21" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 21-NARANJAL / 0-Naranjal                      " class="btn btn-default btn-lg ubicacion-destino">0-Naranjal                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.23" style="display: none;">
+											
+												<li data-id="59.10.23" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 23-ÑACUNDAY / 0-Ñacunday                      " class="btn btn-default btn-lg ubicacion-destino">0-Ñacunday                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.25" style="display: none;">
+											
+												<li data-id="59.10.25" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 25-PRESIDENTE FRANCO / 0-Presidente Franco             " class="btn btn-default btn-lg ubicacion-destino">0-Presidente Franco             </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.27" style="display: none;">
+											
+												<li data-id="59.10.27" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 27-SAN ALBERTO / 0-San Alberto                   " class="btn btn-default btn-lg ubicacion-destino">0-San Alberto                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.29" style="display: none;">
+											
+												<li data-id="59.10.29" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 29-SAN CRISTOBAL / 0-San Cristobal                 " class="btn btn-default btn-lg ubicacion-destino">0-San Cristobal                 </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.30" style="display: none;">
+											
+												<li data-id="59.10.30" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 30-SANTA FE DEL PARANA / 0-Santa Fe Del Parana" class="btn btn-default btn-lg ubicacion-destino">0-Santa Fe Del Parana</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.31" style="display: none;">
+											
+												<li data-id="59.10.31" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 31-SANTA RITA / 0-Santa Rita                    " class="btn btn-default btn-lg ubicacion-destino">0-Santa Rita                    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.33" style="display: none;">
+											
+												<li data-id="59.10.33" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 33-SANTA ROSA DEL MONDAY / 0-Santa Rosa Del Monday         " class="btn btn-default btn-lg ubicacion-destino">0-Santa Rosa Del Monday         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.34" style="display: none;">
+											
+												<li data-id="59.10.34" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 34-TAVAPY / 0-Tavapy" class="btn btn-default btn-lg ubicacion-destino">0-Tavapy</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.10.35" style="display: none;">
+											
+												<li data-id="59.10.35" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 10-ALTO PARANA / 35-YGUAZU / 0-Yguazu                        " class="btn btn-default btn-lg ubicacion-destino">0-Yguazu                        </li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.0" style="display: none;">
+											
+												<li data-id="59.11.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 0-AREGUA / 0-Aregua                        " class="btn btn-default btn-lg ubicacion-destino">0-Aregua                        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.1" style="display: none;">
+											
+												<li data-id="59.11.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 1-CAPIATA / 0-Capiata                       " class="btn btn-default btn-lg ubicacion-destino">0-Capiata                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.3" style="display: none;">
+											
+												<li data-id="59.11.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 3-FERNANDO DE LA MORA / 0-Fernando De La Mora           " class="btn btn-default btn-lg ubicacion-destino">0-Fernando De La Mora           </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.5" style="display: none;">
+											
+												<li data-id="59.11.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 5-GUARAMBARE / 0-Guarambare                    " class="btn btn-default btn-lg ubicacion-destino">0-Guarambare                    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.7" style="display: none;">
+											
+												<li data-id="59.11.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 7-ITA / 0-Ita                           " class="btn btn-default btn-lg ubicacion-destino">0-Ita                           </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.9" style="display: none;">
+											
+												<li data-id="59.11.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 9-ITAUGUA / 0-Itaugua                       " class="btn btn-default btn-lg ubicacion-destino">0-Itaugua                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.11" style="display: none;">
+											
+												<li data-id="59.11.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 11-J. AUGUSTO SALDIVAR / 0-J. Augusto Saldivar           " class="btn btn-default btn-lg ubicacion-destino">0-J. Augusto Saldivar           </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.13" style="display: none;">
+											
+												<li data-id="59.11.13" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 13-LAMBARE / 0-Lambare                       " class="btn btn-default btn-lg ubicacion-destino">0-Lambare                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.15" style="display: none;">
+											
+												<li data-id="59.11.15" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 15-LIMPIO / 0-Limpio                        " class="btn btn-default btn-lg ubicacion-destino">0-Limpio                        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.17" style="display: none;">
+											
+												<li data-id="59.11.17" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 17-LUQUE / 0-Luque                         " class="btn btn-default btn-lg ubicacion-destino">0-Luque                         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.19" style="display: none;">
+											
+												<li data-id="59.11.19" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 19-MARIANO R. ALONSO / 0-Mariano R. Alonso             " class="btn btn-default btn-lg ubicacion-destino">0-Mariano R. Alonso             </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.21" style="display: none;">
+											
+												<li data-id="59.11.21" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 21-NUEVA ITALIA / 0-Nueva Italia                  " class="btn btn-default btn-lg ubicacion-destino">0-Nueva Italia                  </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.23" style="display: none;">
+											
+												<li data-id="59.11.23" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 23-ÑEMBY / 0-Ñemby                         " class="btn btn-default btn-lg ubicacion-destino">0-Ñemby                         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.25" style="display: none;">
+											
+												<li data-id="59.11.25" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 25-SAN ANTONIO / 0-San Antonio                   " class="btn btn-default btn-lg ubicacion-destino">0-San Antonio                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.27" style="display: none;">
+											
+												<li data-id="59.11.27" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 27-SAN LORENZO / 0-San Lorenzo                   " class="btn btn-default btn-lg ubicacion-destino">0-San Lorenzo                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.29" style="display: none;">
+											
+												<li data-id="59.11.29" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 29-VILLA ELISA / 0-Villa Elisa                   " class="btn btn-default btn-lg ubicacion-destino">0-Villa Elisa                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.31" style="display: none;">
+											
+												<li data-id="59.11.31" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 31-VILLETA / 0-Villeta                       " class="btn btn-default btn-lg ubicacion-destino">0-Villeta                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.33" style="display: none;">
+											
+												<li data-id="59.11.33" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 33-YPACARAI / 0-Ypacarai                      " class="btn btn-default btn-lg ubicacion-destino">0-Ypacarai                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.11.35" style="display: none;">
+											
+												<li data-id="59.11.35" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 11-CENTRAL / 35-YPANE / 0-Ypane                         " class="btn btn-default btn-lg ubicacion-destino">0-Ypane                         </li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.0" style="display: none;">
+											
+												<li data-id="59.12.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 0-PILAR / 0-Pilar                         " class="btn btn-default btn-lg ubicacion-destino">0-Pilar                         </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.1" style="display: none;">
+											
+												<li data-id="59.12.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 1-ALBERDI / 0-Alberdi                       " class="btn btn-default btn-lg ubicacion-destino">0-Alberdi                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.3" style="display: none;">
+											
+												<li data-id="59.12.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 3-CERRITO / 0-Cerrito                       " class="btn btn-default btn-lg ubicacion-destino">0-Cerrito                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.5" style="display: none;">
+											
+												<li data-id="59.12.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 5-DESMOCHADOS / 0-Desmochados                   " class="btn btn-default btn-lg ubicacion-destino">0-Desmochados                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.7" style="display: none;">
+											
+												<li data-id="59.12.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 7-GRAL. JOSE E. DIAZ / 0-Gral. Jose E. Diaz            " class="btn btn-default btn-lg ubicacion-destino">0-Gral. Jose E. Diaz            </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.9" style="display: none;">
+											
+												<li data-id="59.12.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 9-GUAZU CUA / 0-Guazu Cua                     " class="btn btn-default btn-lg ubicacion-destino">0-Guazu Cua                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.11" style="display: none;">
+											
+												<li data-id="59.12.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 11-HUMAITA / 0-Humaita                       " class="btn btn-default btn-lg ubicacion-destino">0-Humaita                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.13" style="display: none;">
+											
+												<li data-id="59.12.13" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 13-ISLA UMBU / 0-Isla Umbu                     " class="btn btn-default btn-lg ubicacion-destino">0-Isla Umbu                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.15" style="display: none;">
+											
+												<li data-id="59.12.15" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 15-LAURELES / 0-Laureles                      " class="btn btn-default btn-lg ubicacion-destino">0-Laureles                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.17" style="display: none;">
+											
+												<li data-id="59.12.17" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 17-MAYOR J. MARTINEZ / 0-Mayor J. Martinez             " class="btn btn-default btn-lg ubicacion-destino">0-Mayor J. Martinez             </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.19" style="display: none;">
+											
+												<li data-id="59.12.19" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 19-PASO DE PATRIA / 0-Paso De Patria                " class="btn btn-default btn-lg ubicacion-destino">0-Paso De Patria                </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.21" style="display: none;">
+											
+												<li data-id="59.12.21" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 21-SAN JUAN BAUTISTA / 0-San Juan Bautista" class="btn btn-default btn-lg ubicacion-destino">0-San Juan Bautista</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.23" style="display: none;">
+											
+												<li data-id="59.12.23" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 23-TACUARAS / 0-Tacuaras                      " class="btn btn-default btn-lg ubicacion-destino">0-Tacuaras                      </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.25" style="display: none;">
+											
+												<li data-id="59.12.25" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 25-VILLA FRANCA / 0-Villa Franca                  " class="btn btn-default btn-lg ubicacion-destino">0-Villa Franca                  </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.27" style="display: none;">
+											
+												<li data-id="59.12.27" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 27-VILLA OLIVA / 0-Villa Oliva                   " class="btn btn-default btn-lg ubicacion-destino">0-Villa Oliva                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.12.29" style="display: none;">
+											
+												<li data-id="59.12.29" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 12-ÑEEMBUCU / 29-VILLALBIN / 0-Villalbin                     " class="btn btn-default btn-lg ubicacion-destino">0-Villalbin                     </li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.13.0" style="display: none;">
+											
+												<li data-id="59.13.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 13-AMAMBAY / 0-PEDRO J. CABALLERO / 0-Pedro J. Caballero            " class="btn btn-default btn-lg ubicacion-destino">0-Pedro J. Caballero            </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.13.1" style="display: none;">
+											
+												<li data-id="59.13.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 13-AMAMBAY / 1-BELLA VISTA / 0-Bella Vista                   " class="btn btn-default btn-lg ubicacion-destino">0-Bella Vista                   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.13.3" style="display: none;">
+											
+												<li data-id="59.13.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 13-AMAMBAY / 3-CAPITAN BADO / 0-Capitan Bado                  " class="btn btn-default btn-lg ubicacion-destino">0-Capitan Bado                  </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.13.4" style="display: none;">
+											
+												<li data-id="59.13.4" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 13-AMAMBAY / 4-ZANJA PYTA / 1-Fortuna Guazu" class="btn btn-default btn-lg ubicacion-destino">1-Fortuna Guazu</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.13.5" style="display: none;">
+											
+												<li data-id="59.13.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 13-AMAMBAY / 5-KARAPAI / 0-Karapai" class="btn btn-default btn-lg ubicacion-destino">0-Karapai</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.13.6" style="display: none;">
+											
+												<li data-id="59.13.6" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 13-AMAMBAY / 6-CERRO CORA / 1-Chiriguelo" class="btn btn-default btn-lg ubicacion-destino">1-Chiriguelo</li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.0" style="display: none;">
+											
+												<li data-id="59.14.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 0-SALTO DEL GUAIRA / 0-Salto Del Guaira              " class="btn btn-default btn-lg ubicacion-destino">0-Salto Del Guaira              </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.1" style="display: none;">
+											
+												<li data-id="59.14.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 1-CORPUS CHRISTI / 0-Corpus Christi                " class="btn btn-default btn-lg ubicacion-destino">0-Corpus Christi                </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.3" style="display: none;">
+											
+												<li data-id="59.14.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 3-FRANCISCO CABALLERO ALVAREZ / 0-Francisco Caballero Alvarez   " class="btn btn-default btn-lg ubicacion-destino">0-Francisco Caballero Alvarez   </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.5" style="display: none;">
+											
+												<li data-id="59.14.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 5-ITANARA / 0-Itanara                       " class="btn btn-default btn-lg ubicacion-destino">0-Itanara                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.7" style="display: none;">
+											
+												<li data-id="59.14.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 7-KATUETE / 0-Katuete                       " class="btn btn-default btn-lg ubicacion-destino">0-Katuete                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.9" style="display: none;">
+											
+												<li data-id="59.14.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 9-LA PALOMA / 0-La Paloma                     " class="btn btn-default btn-lg ubicacion-destino">0-La Paloma                     </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.11" style="display: none;">
+											
+												<li data-id="59.14.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 11-NUEVA ESPERANZA / 0-Nueva Esperanza               " class="btn btn-default btn-lg ubicacion-destino">0-Nueva Esperanza               </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.12" style="display: none;">
+											
+												<li data-id="59.14.12" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 12-MARACANA / 0-Maracana" class="btn btn-default btn-lg ubicacion-destino">0-Maracana</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.13" style="display: none;">
+											
+												<li data-id="59.14.13" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 13-SAN ISIDRO CURUGUATY / 0-Villa San Isidro Curuguaty    " class="btn btn-default btn-lg ubicacion-destino">0-Villa San Isidro Curuguaty    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.14" style="display: none;">
+											
+												<li data-id="59.14.14" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 14-PTO. ADELA / 0-Pto Adela" class="btn btn-default btn-lg ubicacion-destino">0-Pto Adela</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.15" style="display: none;">
+											
+												<li data-id="59.14.15" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 15-VILLA YGATIMI / 0-Villa Ygatimi                 " class="btn btn-default btn-lg ubicacion-destino">0-Villa Ygatimi                 </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.16" style="display: none;">
+											
+												<li data-id="59.14.16" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 16-YASY CAÑY / 0-Yasy Cañy" class="btn btn-default btn-lg ubicacion-destino">0-Yasy Cañy</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.17" style="display: none;">
+											
+												<li data-id="59.14.17" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 17-YPE JHU / 0-Ype Jhu                       " class="btn btn-default btn-lg ubicacion-destino">0-Ype Jhu                       </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.18" style="display: none;">
+											
+												<li data-id="59.14.18" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 18-YBYRAROVANA / 0-Ybyrarovana" class="btn btn-default btn-lg ubicacion-destino">0-Ybyrarovana</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.19" style="display: none;">
+											
+												<li data-id="59.14.19" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 19-YBY PYTA / 0-Yby Pyta" class="btn btn-default btn-lg ubicacion-destino">0-Yby Pyta</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.14.20" style="display: none;">
+											
+												<li data-id="59.14.20" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 14-CANINDEYU / 20-LAUREL / 0-Laurel" class="btn btn-default btn-lg ubicacion-destino">0-Laurel</li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.15.0" style="display: none;">
+											
+												<li data-id="59.15.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 15-PDTE. HAYES / 0-VILLA HAYES / 6-Pozo Colorado                 " class="btn btn-default btn-lg ubicacion-destino">6-Pozo Colorado                 </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.15.1" style="display: none;">
+											
+												<li data-id="59.15.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 15-PDTE. HAYES / 1-BENJAMIN ACEVAL / 0-Benjamin Aceval               " class="btn btn-default btn-lg ubicacion-destino">0-Benjamin Aceval               </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.15.2" style="display: none;">
+											
+												<li data-id="59.15.2" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 15-PDTE. HAYES / 2-CAMPO ACEVAL / 0-Campo Aceval" class="btn btn-default btn-lg ubicacion-destino">0-Campo Aceval</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.15.3" style="display: none;">
+											
+												<li data-id="59.15.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 15-PDTE. HAYES / 3-FORTIN JOSE FALCON / 0-Fortin Jose Falcon            " class="btn btn-default btn-lg ubicacion-destino">0-Fortin Jose Falcon            </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.15.4" style="display: none;">
+											
+												<li data-id="59.15.4" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 15-PDTE. HAYES / 4-GRAL. JOSE M. BRUGUEZ / 0-Gral.Jose M.Bruguez" class="btn btn-default btn-lg ubicacion-destino">0-Gral.Jose M.Bruguez</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.15.5" style="display: none;">
+											
+												<li data-id="59.15.5" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 15-PDTE. HAYES / 5-NANAWA / 0-Nanawa                        " class="btn btn-default btn-lg ubicacion-destino">0-Nanawa                        </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.15.6" style="display: none;">
+											
+												<li data-id="59.15.6" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 15-PDTE. HAYES / 6-NUEVA ASUNCION / 1-Chaco-I" class="btn btn-default btn-lg ubicacion-destino">1-Chaco-I</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.15.7" style="display: none;">
+											
+												<li data-id="59.15.7" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 15-PDTE. HAYES / 7-PUERTO PINASCO / 0-Pto. Pinasco                  " class="btn btn-default btn-lg ubicacion-destino">0-Pto. Pinasco                  </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.15.9" style="display: none;">
+											
+												<li data-id="59.15.9" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 15-PDTE. HAYES / 9-TTE. IRALA FERNANDEZ / 0-Tte.Irala Fernandez" class="btn btn-default btn-lg ubicacion-destino">0-Tte.Irala Fernandez</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.15.11" style="display: none;">
+											
+												<li data-id="59.15.11" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 15-PDTE. HAYES / 11-TTE. ESTEBAN MARTINEZ / 0-Tte.Esteban Martinez" class="btn btn-default btn-lg ubicacion-destino">0-Tte.Esteban Martinez</li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.16.0" style="display: none;">
+											
+												<li data-id="59.16.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 16-ALTO PARAGUAY / 0-FUERTE OLIMPO / 0-Fuerte Olimpo                 " class="btn btn-default btn-lg ubicacion-destino">0-Fuerte Olimpo                 </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.16.1" style="display: none;">
+											
+												<li data-id="59.16.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 16-ALTO PARAGUAY / 1-PUERTO CASADO / 0-Puerto Casado                 " class="btn btn-default btn-lg ubicacion-destino">0-Puerto Casado                 </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.16.2" style="display: none;">
+											
+												<li data-id="59.16.2" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 16-ALTO PARAGUAY / 2-CARMELO PERALTA / 0-Carmelo Peralta" class="btn btn-default btn-lg ubicacion-destino">0-Carmelo Peralta</li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.16.3" style="display: none;">
+											
+												<li data-id="59.16.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 16-ALTO PARAGUAY / 3-BAHIA NEGRA / 0-Bahia Negra" class="btn btn-default btn-lg ubicacion-destino">0-Bahia Negra</li>
+											
+											</ul> 
+										
+                                    
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.17.0" style="display: none;">
+											
+												<li data-id="59.17.0" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 17-BOQUERON / 0-FILADELFIA / 0-Filadelfia                    " class="btn btn-default btn-lg ubicacion-destino">0-Filadelfia                    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.17.1" style="display: none;">
+											
+												<li data-id="59.17.1" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 17-BOQUERON / 1-LOMA PLATA / 0-Loma Plata                    " class="btn btn-default btn-lg ubicacion-destino">0-Loma Plata                    </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.17.3" style="display: none;">
+											
+												<li data-id="59.17.3" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 17-BOQUERON / 3-MCAL.ESTIGARRIBIA / 4-Dr. Pedro P. Peña             " class="btn btn-default btn-lg ubicacion-destino">4-Dr. Pedro P. Peña             </li>
+											
+											</ul> 
+										
+											<ul class="elegir_mesa departamentos col-md-12" data-distrito="59.17.4" style="display: none;">
+											
+												<li data-id="59.17.4" data-tipo="mesa" titulo-ubicacion="ELECCIONES MUNICIPALES / 17-BOQUERON / 4-BOQUERON / 1-Neuland" class="btn btn-default btn-lg ubicacion-destino">1-Neuland</li>
+											
+											</ul> 
+										
+                                    
+                            
+                        </div>
+					
+                    </div>
+                    
+
+                    <div id="paso-3" class="paso" style="display:none;">
+                        <img class="grafico" src="img/maquina_verificar_p6.png" id="maquina-verificacion">
+                        <h1>Una vez impreso el boletín, <b>verificá</b> que el registro electrónico de tu voto, coincida con la versión impresa, acercando el boletín al lector verificador.</h1>
+                        <button class="next btn btn-primary btn-lg">Continuar</button>
+                    </div>
+
+                    <div id="paso-4" class="paso" style="display:none;">
+                        <img class="grafico" src="img/dobla_voto.png"  id="maquina-verificacion">
+                        <h1><b>Doblá</b> el boletín de manera que se asegure el secreto del voto.<br><b>Entregá</b> al presidente de mesa para que lo firme.</h1>
+                        <button class="next btn btn-primary btn-lg">Continuar</button>
+                    </div>
+
+                    <div id="paso-5" class="paso" style="display:none;">
+                        <img class="grafico" src="img/info_tinta.png" id="maquina-verificacion">
+                        <h1><b>Entintate</b> el dedo índice de la mano derecha. Recibí del presidente de mesa el boletín y <b>depositalo</b> en la urna plástica. Retirá tu cédula de identidad civil.</h1>
+                        <button class="next btn btn-primary btn-lg">Continuar</button>
+                    </div>
+
+                    <div id="agradecimiento" style="display:none;">
+                        <img class="grafico" src="img/agradecimiento.png" >
+                        <h1>Gracias por utilizar el simulador para el uso de la <b>Máquina de votación.</b></h1>
+                        <button id="reset" class="btn btn-primary btn-lg">Reiniciar</button>
+                    </div>
+
+                  
+                </div>
+            </div>
+        </div>
+    </body>
+
+<!-- Mirrored from simuladoroficial.tsje.gov.py/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Aug 2026 00:32:27 GMT -->
+</html>

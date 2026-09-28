@@ -4,6 +4,7 @@ Simuladores de demostración de la Boleta Única Electrónica, sin vínculo con 
 
 - [`/erico`](erico/) — Simulador Erico.
 - [`/cabrera`](cabrera/) — Simulador Cabrera.
+- [`/belen`](belen/) — Simulador Belén.
 
 La página raíz (`index.html`) es solo un índice con links a cada uno.
 
